@@ -30,6 +30,11 @@ export default function Emoji() {
 
 
   function onCiclo() {
+
+    if(saude === 0){
+      setSituacao("dead");
+      return;
+        }
     setComida(Math.max(0, comida - 1));
     setAgua(Math.max(0, agua - 1));
 
@@ -50,16 +55,19 @@ export default function Emoji() {
       setSaude((prevSaude) => Math.max(0, prevSaude - 1));
     }
     if( energia <= 2){
-      
         setSituacao("sleep");
-        if(saude <= 3){
+        if(saude <= 2){
           setSituacao("sick");
-        if(saude-2 === 0){
-            setSituacao("dead")
+        if(saude=== 0){
+            setSituacao("dead");
+
         }
       }
+      else if(saude > 2){
+        setSituacao("happy");
+      }
     }
-   
+  
   }
 
   return (
