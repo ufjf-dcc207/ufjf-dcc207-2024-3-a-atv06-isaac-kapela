@@ -6,6 +6,7 @@ const EMOJIS = new Map<string, string>([
   ["happy", "🙂"],
   ["sick", "🤢"],
   ["dead", "😵"],
+  ["sleep", "😴"],
 ]);
 
 export default function Emoji() {
@@ -26,6 +27,8 @@ export default function Emoji() {
     setLuz(!luz);
   }
 
+
+
   function onCiclo() {
     setComida(Math.max(0, comida - 1));
     setAgua(Math.max(0, agua - 1));
@@ -34,6 +37,7 @@ export default function Emoji() {
       setEnergia(Math.max(0, energia - 1));
     }else{
       setEnergia(Math.min(agua + 1, 5));
+
     }
 
     if (comida === 0) {
@@ -45,6 +49,17 @@ export default function Emoji() {
     if (energia === 0) {
       setSaude((prevSaude) => Math.max(0, prevSaude - 1));
     }
+    if( energia <= 2){
+      
+        setSituacao("sleep");
+        if(saude <= 3){
+          setSituacao("sick");
+        if(saude-2 === 0){
+            setSituacao("dead")
+        }
+      }
+    }
+   
   }
 
   return (
