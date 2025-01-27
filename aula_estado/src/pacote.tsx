@@ -7,9 +7,9 @@ export function Pacote() {
 
     <dl className="pacote">
         <dt>Largura (cm)</dt>
-        <dd onClick={(e) =>{
-            setLargura(largura+1);
-        }}>{largura}</dd>
+        <dd ><input type="number" value={largura} min="5"  step="1"  onChange={(evento) =>{
+            setLargura(evento.target.valueAsNumber);
+        }}></input></dd>
         <dt>Altura (cm)</dt>
         <dd>10</dd>
         <dt>Profundidade (cm)</dt>
