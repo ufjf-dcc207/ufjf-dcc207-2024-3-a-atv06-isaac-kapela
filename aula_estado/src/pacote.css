@@ -1,0 +1,10 @@
+.pacote{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 0.1em;
+    border: 1px solid #c0c0c0;
+    padding: 0.2em;
+    justify-items: flex-end;
+
+ 
+}
