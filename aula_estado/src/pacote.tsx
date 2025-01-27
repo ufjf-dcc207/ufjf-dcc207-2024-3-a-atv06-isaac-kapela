@@ -3,6 +3,9 @@ import "./pacote.css"
 
 export function Pacote() {
     const [largura, setLargura] = useState(5);
+    const [altura, setAltura] = useState(5);
+    const [Profundidade, setProfundidade] = useState(5);
+    const [peso, setPeso] = useState(5);
   return (
 
     <dl className="pacote">
@@ -17,7 +20,7 @@ export function Pacote() {
         <dt>peso (g)</dt>
         <dd>10</dd>
         <dt>custo</dt>
-        <dd>{(largura*0.50). toLocaleString("pt-br", {style: "currency", currency: "BRL"})}</dd>
+        <dd>{(largura*altura *Profundidade *peso * 0.50). toLocaleString("pt-br", {style: "currency", currency: "BRL"})}</dd>
     </dl>
 
     
